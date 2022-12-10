@@ -1,6 +1,3 @@
-import 'dart:ffi';
-
-import 'package:ask/constants.dart';
 import 'package:ask/styles/global_styles.dart';
 import 'package:flutter/material.dart';
 

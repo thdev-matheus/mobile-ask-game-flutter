@@ -1,5 +1,6 @@
 import 'package:ask/components/button.dart';
 import 'package:ask/constants.dart';
+import 'package:ask/styles/global_styles.dart';
 import 'package:flutter/material.dart';
 
 class WelcomePage extends StatefulWidget {
@@ -17,14 +18,38 @@ class _WelcomePageState extends State<WelcomePage> {
     return SafeArea(
       child: Scaffold(
         body: Container(
+            color: darkRed,
             padding: const EdgeInsets.all(20),
-            child: Button(
-              width: 200,
-              height: 50,
-              icon: Icons.ac_unit,
-              text: "Jogar",
-              onPressed: () =>
-                  globalNavigatorKey.currentState?.pushNamed("/home"),
+            child: Center(
+              child: Column(
+                mainAxisAlignment: MainAxisAlignment.center,
+                children: [
+                  const Text(
+                    "Bem-vindo(a) ao",
+                    style: textTitleBoldWhite,
+                  ),
+                  const Text(
+                    "Quiz Bíblico",
+                    style: textSuperTitlelBoldGold,
+                  ),
+                  Container(
+                    margin: marginPaddingVertical(50),
+                    child: const Text(
+                      textAlign: TextAlign.center,
+                      "Um jogo onde você se diverte e aprende ao mesmo tempo.",
+                      style: textNormalBoldWhite,
+                    ),
+                  ),
+                  Button(
+                    width: 200,
+                    height: 50,
+                    icon: Icons.ac_unit,
+                    text: "Jogar",
+                    onPressed: () =>
+                        globalNavigatorKey.currentState?.pushNamed("/home"),
+                  ),
+                ],
+              ),
             )),
       ),
     );

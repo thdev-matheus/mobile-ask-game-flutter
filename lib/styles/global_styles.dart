@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 
 const Color black = Colors.black87;
 const Color white = Colors.white70;
-const Color darkRed = Color.fromARGB(255, 86, 7, 7);
+const Color darkRed = Color.fromARGB(255, 57, 24, 24);
 const Color gold = Color.fromARGB(255, 183, 149, 27);
 
 const TextStyle textTitleBoldWhite = TextStyle(
@@ -21,6 +21,12 @@ const TextStyle textTitleBoldDarkRed = TextStyle(
   fontWeight: FontWeight.bold,
   color: darkRed,
   fontSize: 30,
+);
+
+const TextStyle textSuperTitlelBoldGold = TextStyle(
+  fontWeight: FontWeight.bold,
+  color: gold,
+  fontSize: 55,
 );
 
 const TextStyle textTitlelBoldGold = TextStyle(
@@ -53,11 +59,13 @@ const TextStyle textNormalBoldGold = TextStyle(
   fontSize: 16,
 );
 
-const EdgeInsets marginPaddingAll = EdgeInsets.all(20);
+EdgeInsets marginPaddingAll(double value) => EdgeInsets.all(value);
 
-const EdgeInsets marginPaddingVertical = EdgeInsets.symmetric(vertical: 20);
+EdgeInsets marginPaddingVertical(double value) =>
+    EdgeInsets.symmetric(vertical: value);
 
-const EdgeInsets marginPaddingHorizontal = EdgeInsets.symmetric(horizontal: 20);
+EdgeInsets marginPaddingHorizontal(double value) =>
+    EdgeInsets.symmetric(horizontal: value);
 
 const ButtonStyle styleButtonPrimary = ButtonStyle(
   backgroundColor: MaterialStatePropertyAll<Color>(gold),
