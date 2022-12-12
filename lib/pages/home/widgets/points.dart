@@ -12,15 +12,12 @@ class Points extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Container(
-      margin: marginPaddingVertical(30),
+      height: MediaQuery.of(context).size.height / 6,
       child: Column(
         children: [
-          Container(
-            margin: marginPaddingVertical(10),
-            child: const Text(
-              "Sua pontuação atual é:",
-              style: textTitleBoldBlack,
-            ),
+          const Text(
+            "Sua pontuação atual é:",
+            style: textTitleBoldBlack,
           ),
           Container(
             margin: marginPaddingVertical(10),

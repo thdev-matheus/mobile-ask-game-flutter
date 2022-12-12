@@ -12,7 +12,8 @@ class Ask extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Container(
-      margin: marginPaddingVertical(30),
+      height: MediaQuery.of(context).size.height / 5,
+      margin: marginPaddingVertical(10),
       child: Text(
         askText,
         textAlign: TextAlign.center,

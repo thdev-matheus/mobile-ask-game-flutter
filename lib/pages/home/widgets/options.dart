@@ -15,6 +15,7 @@ class Options extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Container(
+      height: MediaQuery.of(context).size.height / 2.4,
       margin: marginPaddingVertical(10),
       child: Column(
         children: [

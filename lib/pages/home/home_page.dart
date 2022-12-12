@@ -64,16 +64,20 @@ class _HomePageState extends State<HomePage> {
   Widget build(BuildContext context) {
     return SafeArea(
       child: Scaffold(
-        body: Container(
-          color: gold,
-          padding: marginPaddingAll(20),
-          child: Center(
-            child: Column(
-              children: [
-                Ask(askText: db.asks()[currentIndex]),
-                Options(options: db.options()[currentIndex], actions: actions),
-                Points(pontuation: points),
-              ],
+        body: SingleChildScrollView(
+          child: Container(
+            height: MediaQuery.of(context).size.height,
+            color: gold,
+            padding: marginPaddingAll(20),
+            child: Center(
+              child: Column(
+                children: [
+                  Ask(askText: db.asks()[currentIndex]),
+                  Options(
+                      options: db.options()[currentIndex], actions: actions),
+                  Points(pontuation: points),
+                ],
+              ),
             ),
           ),
         ),
