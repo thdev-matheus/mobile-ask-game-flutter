@@ -29,6 +29,12 @@ const TextStyle textSuperTitlelBoldGold = TextStyle(
   fontSize: 55,
 );
 
+const TextStyle textSuperTitlelBoldBlack = TextStyle(
+  fontWeight: FontWeight.bold,
+  color: black,
+  fontSize: 55,
+);
+
 const TextStyle textTitlelBoldGold = TextStyle(
   fontWeight: FontWeight.bold,
   color: gold,
