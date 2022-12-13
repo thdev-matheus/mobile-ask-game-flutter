@@ -1,3 +1,4 @@
+import 'package:ask/components/button.dart';
 import 'package:ask/constants.dart';
 import 'package:ask/database/db.dart';
 import 'package:ask/pages/home/widgets/ask.dart';
@@ -41,9 +42,23 @@ class _HomePageState extends State<HomePage> {
       globalNavigatorKey.currentState!.pushNamedAndRemoveUntil(
         "/results",
         (route) => false,
-        arguments: {points},
+        arguments: {
+          "points": points,
+          "currentIndex": currentIndex,
+        },
       );
     }
+  }
+
+  void dropGame() {
+    globalNavigatorKey.currentState!.pushNamedAndRemoveUntil(
+      "/results",
+      (route) => false,
+      arguments: {
+        "points": points,
+        "currentIndex": currentIndex,
+      },
+    );
   }
 
   void actions(String response) {
@@ -76,6 +91,13 @@ class _HomePageState extends State<HomePage> {
                   Options(
                       options: db.options()[currentIndex], actions: actions),
                   Points(pontuation: points),
+                  Button(
+                    text: "Desistir",
+                    onPressed: () => dropGame(),
+                    width: 130,
+                    height: 40,
+                    primary: false,
+                  )
                 ],
               ),
             ),

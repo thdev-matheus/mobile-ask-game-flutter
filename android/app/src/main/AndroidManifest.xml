@@ -1,7 +1,7 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     package="com.example.ask">
    <application
-        android:label="ask"
+        android:label="Quiz Bíblico"
         android:name="${applicationName}"
         android:icon="@mipmap/ic_launcher">
         <activity

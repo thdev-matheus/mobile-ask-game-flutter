@@ -4,7 +4,9 @@ import 'package:ask/styles/global_styles.dart';
 import 'package:flutter/material.dart';
 
 class ResultPage extends StatelessWidget {
-  const ResultPage({super.key});
+  const ResultPage({
+    super.key,
+  });
 
   void goTo(String path) {
     globalNavigatorKey.currentState!.pushNamed(path);
@@ -12,6 +14,10 @@ class ResultPage extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    var routeParams =
+        ModalRoute.of(context)!.settings.arguments as Map<String, dynamic>;
+
+    print(routeParams);
     return SafeArea(
       child: Scaffold(
         body: Container(
@@ -19,22 +25,52 @@ class ResultPage extends StatelessWidget {
           color: darkRed,
           child: Center(
             child: Column(
+              mainAxisAlignment: MainAxisAlignment.center,
               children: [
-                Button(
-                  text: "Sair",
-                  onPressed: () => goTo("/"),
-                  width: 200,
-                  height: 50,
+                const Text(
+                  "Sua pontuação total foi de:",
+                  textAlign: TextAlign.center,
+                  style: textTitlelBoldGold,
                 ),
                 Container(
-                  margin: marginPaddingVertical(10),
-                  child: Button(
-                    text: "Jogar Novamente",
-                    onPressed: () => goTo("/home"),
-                    width: 200,
-                    height: 50,
+                  margin: marginPaddingVertical(50),
+                  child: Row(
+                    mainAxisAlignment: MainAxisAlignment.center,
+                    children: [
+                      Text(
+                        "${routeParams["points"]}",
+                        style: textSuperTitlelBoldGold,
+                      ),
+                      Container(
+                        margin: const EdgeInsets.only(left: 5),
+                        child: Text(
+                          "/${routeParams["currentIndex"]}",
+                          style: textNormalBoldGold,
+                        ),
+                      ),
+                    ],
                   ),
                 ),
+                Row(
+                  mainAxisAlignment: MainAxisAlignment.center,
+                  children: [
+                    Button(
+                      text: "De Novo",
+                      onPressed: () => goTo("/home"),
+                      width: 150,
+                      height: 50,
+                    ),
+                    Container(
+                      margin: const EdgeInsets.only(left: 10),
+                      child: Button(
+                        text: "Sair",
+                        onPressed: () => goTo("/"),
+                        width: 150,
+                        height: 50,
+                      ),
+                    ),
+                  ],
+                )
               ],
             ),
           ),

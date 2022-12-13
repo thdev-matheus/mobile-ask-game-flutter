@@ -43,7 +43,8 @@ class _WelcomePageState extends State<WelcomePage> {
                   Button(
                     width: 200,
                     height: 50,
-                    icon: Icons.ac_unit,
+                    iconSize: 35,
+                    icon: Icons.psychology_sharp,
                     text: "Jogar",
                     onPressed: () =>
                         globalNavigatorKey.currentState?.pushNamed("/home"),
